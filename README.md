@@ -1,2 +1,2 @@
 # dotfiles
-Phinken's personal dotfiles
+Phinken's personal dotfiles.
