@@ -1,0 +1,204 @@
+//           _       _           _                   
+//   _ __   | |__   (_)  _ __   | | __   ___   _ __  
+//  | '_ \  | '_ \  | | | '_ \  | |/ /  / _ \ | '_ \ 
+//  | |_) | | | | | | | | | | | |   <  |  __/ | | | |
+//  | .__/  |_| |_| |_| |_| |_| |_|\_\  \___| |_| |_|
+//  |_|                                              
+//          _      _         _                                   _   
+//  __  __ | | __ | |__     | |   __ _   _   _    ___    _   _  | |_ 
+//  \ \/ / | |/ / | '_ \    | |  / _` | | | | |  / _ \  | | | | | __|
+//   >  <  |   <  | |_) |   | | | (_| | | |_| | | (_) | | |_| | | |_ 
+//  /_/\_\ |_|\_\ |_.__/    |_|  \__,_|  \__, |  \___/   \__,_|  \__|
+//                                       |___/                       
+
+
+// Personally customised layout for the ThinkPad x230 Norwegian keyboard.
+// Based on the Common Latin alphabet and Norwegian layouts.
+// The standard Norwegian layout file refers the Latin one and adds changes for the relevant keys.
+// To simply things, I have put together my own custom layout in a separate file that does not need to refer to any other layouts.
+
+// On new installs, this file should be copied to /usr/share/X11/xkb/symbols/phinken.
+// Then activate the layout with the following command: 'setxkbmap phinken'
+
+
+// ┌─────┐
+// │ 2 4 │   2 = Shift,  4 = Level3 + Shift
+// │ 1 3 │   1 = Normal, 3 = Level3		// Level3 = AltGr / right Alt
+// └─────┘
+// ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┲━━━━━━━━━┓
+// │ § ¶ │ ! ¹ │ " ² │ # ³ │ ¤ ¼ │ % ‰ │ & ⅝ │ / ÷ │ ( « │ ) » │ = ° │ ? ¿ │ ` ¬ ┃ Back-   ┃
+// │ | ¦ │ 1 ¡ │ 2 @ │ 3 £ │ 4 $ │ 5 ½ │ 6   │ 7 { │ 8 [ │ 9 ] │ 0 } │ + ± │ \ ´ ┃ space   ┃
+// ┢━━━━━┷━┱───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┺━┳━━━━━━━┫
+// ┃       ┃ Q Ω │ W Ł │ E ¢ │ R ™ │ T Þ │ Y ¥ │ U ↑ │ I ı │ O Œ │ P Π │ Å ° │ ^ ˇ ┃ Enter ┃
+// ┃Tab    ┃ q @ │ w ł │ e € │ r ® │ t þ │ y ← │ u ↓ │ i → │ o œ │ p π │ å ¨ │ ¨ ~ ┃       ┃
+// ┣━━━━━━━┻┱────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┺┓      ┃
+// ┃        ┃ A º │ S § │ D Ð │ F ª │ G Ŋ │ H Ħ │ J  ̛ │ K & │ L l │ Ø ˝ │ Æ ˇ │ * ˇ ┃      ┃
+// ┃Caps    ┃ a ª │ s ß │ d ð │ f đ │ g ŋ │ h ħ │ j  ̉ │ k ĸ │ l ł │ ø ´ │ æ ^ │ ' ˝ ┃      ┃
+// ┣━━━━━━━┬┹━───┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┲┷━━━━━┻━━━━━━┫
+// ┃       │     │ Z < │ X > │ C © │ V ‘ │ B ’ │ N N │ M º │ ; ˛ │ : · │ _ — ┃             ┃
+// ┃Shift  │Shift│ z « │ x » │ c © │ v “ │ b ” │ n n │ m µ │ , ¸ │ . … │ - – ┃Shift ⇧      ┃
+// ┣━━━━┱━━┹━━━━━+━━━──+─────+─────┴─────┴─────┴─────┴─────+━━━━━+━━━━━╈━━━━━+━━━━━━━━━━━━━┫
+// ┃    ┃        ┃     ┃     ┃                             ┃Alt  ┃     ┃     ┃             ┃
+// ┃Fn  ┃Ctrl    ┃Alt  ┃Win  ┃           Space             ┃Gr   ┃Win  ┃Ctrl ┃Arrow keys   ┃
+// ┗━━━━┻━━━━━━━━┻━━━━━┹━━━━━┹─────────────────────────────┴─────┺━━━━━┻━━━━━┻━━━━━━━━━━━━━┛
+
+
+// NEEDS FIXING:
+	// Tweak layout to my liking
+	// See if -option arguments from .xinitrc can be mapped directly into this layout instead
+
+
+
+
+default partial
+xkb_symbols "basic" {
+
+    name[Group1]="Phinken";
+
+
+// F ROW - ROW 6 ---------------------------------------------------------
+
+    // CapsLock (remap from Escape!)
+    // F1—F12
+    // Home
+    // End
+    // Insert
+    // Delete
+
+
+// E ROW - ROW 5 ---------------------------------------------------------
+
+    key <TLDE>  { [       bar,    section,    brokenbar,    paragraph ] };
+    
+    key <AE01>	{ [         1,     exclam,   exclamdown,  onesuperior ]	};
+    key <AE02>	{ [         2,   quotedbl,           at,  twosuperior ]	};
+    key <AE03>	{ [         3, numbersign,     sterling, threesuperior]	};
+    key <AE04>	{ [         4,   currency,       dollar,   onequarter ]	};
+    key <AE05>  { [         5,    percent,      onehalf,    0x1002030 ] };
+    key <AE06>	{ [         6,  ampersand,          yen,  fiveeighths ]	};
+    key <AE07>	{ [         7,      slash,    braceleft,     division ]	};
+    key <AE08>	{ [         8,  parenleft,  bracketleft, guillemotleft]	};
+    key <AE09>	{ [         9, parenright, bracketright, guillemotright] };
+    key <AE10>	{ [         0,      equal,   braceright,       degree ]	};
+    key <AE11>  { [      plus,   question,    plusminus, questiondown ] };
+    key <AE12>  { [ backslash, dead_grave,   dead_acute,      notsign ] };
+
+    // Bakspace
+
+
+// D ROW - ROW 4 ---------------------------------------------------------
+
+    // Tab key
+
+    key <AD01>	{ [         q,          Q,           at,  Greek_OMEGA ]	};
+    key <AD02>	{ [         w,          W,      lstroke,      Lstroke ]	};
+    key <AD03>	{ [         e,          E,     EuroSign,         cent ]	};
+    key <AD04>  { [         r,          R,   registered,    trademark ] };
+    key <AD05>	{ [         t,          T,        thorn,        THORN ]	};
+    key <AD06>	{ [         y,          Y,    leftarrow,          yen ]	};
+    key <AD07>	{ [         u,          U,    downarrow,      uparrow ]	};
+    key <AD08>	{ [         i,          I,   rightarrow,     idotless ]	};
+    key <AD09>	{ [         o,          O,           oe,           OE ]	};
+    key <AD10>  { [         p,          P,     Greek_pi,     Greek_PI ] };
+    key <AD11>	{ [     aring,  Aring, dead_diaeresis, dead_abovering ]	};
+    key <AD12>	{ [dead_diaeresis, dead_circumflex, dead_tilde, dead_caron ] };
+
+    // Return key
+
+
+// C ROW - ROW 3 ---------------------------------------------------------
+
+    // Escape (see "REMAPPING OF SPECIAL KEYS")
+
+    key <AC01>	{ [         a,          A,  ordfeminine,    masculine ]	};
+    key <AC02>	{ [         s,          S,       ssharp,      section ]	};
+    key <AC03>	{ [         d,          D,          eth,          ETH ]	};
+    key <AC04>	{ [         f,          F,      dstroke,  ordfeminine ]	};
+    key <AC05>	{ [         g,          G,          eng,          ENG ]	};
+    key <AC06>	{ [         h,          H,      hstroke,      Hstroke ]	};
+    key <AC07>	{ [         j,          J,    dead_hook,    dead_horn ] };
+    key <AC08>	{ [         k,          K,          kra,    ampersand ]	};
+    key <AC09>	{ [         l,          L,      lstroke,      Lstroke ]	};
+    key <AC10>  { [    oslash,   Ooblique,   dead_acute, dead_doubleacute ] };
+    key <AC11>  { [        ae,         AE, dead_circumflex, dead_caron] };
+
+    key <BKSL>  { [apostrophe,   asterisk, dead_doubleacute, multiply ] };
+
+    // Return key: see row above
+
+
+// B ROW - ROW 2 ---------------------------------------------------------
+
+    // Shift_L
+    // Shift_L (extra Shift on the <LSGR>, see "REMAPPING OF SPECIAL KEYS"
+
+    key <AB01>	{ [         z,          Z, guillemotleft,        less ]	};
+    key <AB02>	{ [         x,          X, guillemotright,    greater ]	};
+    key <AB03>	{ [         c,          C,    copyright,    copyright ]	};
+    key <AB04>	{ [         v,          V, leftdoublequotemark, leftsinglequotemark ]	};
+    key <AB05>	{ [         b,          B, rightdoublequotemark, rightsinglequotemark ] };
+    key <AB06>	{ [         n,          N,            n,            N ]	};
+    key <AB07>	{ [         m,          M,           mu,    masculine ]	};
+    key <AB08>	{ [     comma,  semicolon, dead_cedilla,  dead_ogonek ]	};
+    key <AB09>  { [    period,      colon,   ellipsis, periodcentered ] };
+    key <AB10>  { [     minus, underscore,       endash,       emdash ] };
+
+    // Shift_R
+
+
+// A ROW - ROW 1 ---------------------------------------------------------
+
+    // Fn key
+    // Ctrl_L
+    // Alt_L on Win_L key (see "REMAPPING OF SPECIAL CHARACTERS)
+    // Win_L on Alt_L key (see "REMAPPING OF SPECIAL CHARACTERS)
+    // Space bar
+    // AltGr / Alt_R
+    // Win_R on PrtSc key (see "REMAPPING OF SPECIAL CHARACTERS)
+
+    // Arrow keys (consider remapping to other functions once hjkl is set up as arrow keys)
+
+
+// REMAPPING OF SPECIAL KEYS ---------------------------------------------
+
+    // Extra Shift on <LSGR> key:
+    	key.type = "ONE_LEVEL";
+    	key <LSGT> { [ Shift_L ] };
+    	//default: key <LSGT>  { [ less, greater, onehalf, threequarters] };
+
+    // Escape on CapsLock key:
+	// Currently handled by -option in .xinitrc
+	// Look into doing it here.
+
+    // CapsLock on Escape key:
+	// Currently handled by -option in .xinitrc
+	// Look into doing it here.
+
+    // Win_L on Alt_L key:
+	// Currently handled by -option in .xinitrc
+	// Look into doing it here.
+
+    // Alt_L on Win_L key:
+	// Currently handled by -option in .xinitrc
+	// Look into doing it here.
+
+    // Win_R on PrtSc key:
+    	// Currently handled by -option in .xinitrc
+	// Look into doing it here.
+
+
+// VIM ARROW KEYS ON HJKL ------------------------------------------------
+
+    // To be added. See Arch Wiki on how to set this up.
+
+
+// OTHER STUFF -----------------------------------------------------------
+
+    include "nbsp(level3n)"		// ? Copied from no layout.
+    include "keypad(ossmath)"		// ? Copied from no layout.
+    include "kpdl(comma)"		// ? Copiet from no layout.
+
+    include "level3(ralt_switch)"	// Defines AltGr/Alt_R as level3 modifier.
+
+
+};
